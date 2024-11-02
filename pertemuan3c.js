@@ -1,55 +1,32 @@
-// function satu() {
-//     console.log("hallo saya satu");
-// }
-
-// function dua() {
-//     console.log("saya dua");
-// }
-
-// function tiga() {
-//     console.log("saya tiga");
-// }
-
-// function empat() {
-//     console.log("saya empat");
-// }
 const delay = (ms) => {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-const satuedit = async (callback) => {
-    console.log("hallo saya satu edit");
-    await delay(3000);
-    callback();
+const satuedit = async () => {
+    console.log("hallo saya satu");
+    await delay(2000); 
 }
 
-const duaedit = async (callback) => {
-    console.log("hallo saya dua edit");
-    await delay(2000);
-    callback();
+const duaedit = async () => {
+    console.log("hallo saya dua");
+    await delay(1000); 
 }
 
-const tigaedit = (callback) => {
-    console.log("hallo saya tiga edit");
-    callback();
+const tigaedit = () => {
+    console.log("hallo saya tiga");
 }
-
 
 const empatedit = () => {
-    console.log("hallo saya empat edit");
+    console.log("hallo saya empat");
 }
 
 
+const main = async () => {
+    await satuedit(); 
+    await duaedit();  
+    tigaedit();       
+    empatedit();      
+}
 
-// satuedit(duaedit);
-// duaedit();
-// tigaedit();
-// empatedit();
 
-satuedit(() =>{
-    duaedit(() => {
-        tigaedit(() =>{
-            empatedit();
-        });
-    });
-});
+main();
